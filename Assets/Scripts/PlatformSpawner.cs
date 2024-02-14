@@ -7,6 +7,7 @@ public class PlatformSpawner : MonoBehaviour
 {
 
     public GameObject Platform;
+    public GameObject Diamond;
     Vector3 lastPos;
     Vector3 pos;
     float size;
@@ -47,7 +48,12 @@ public class PlatformSpawner : MonoBehaviour
         pos.x += size;
         lastPos = pos;
         Instantiate(Platform, pos, Quaternion.identity);
+        int rand = Random.Range(0, 6);
 
+        if (rand < 1)
+        {
+            Instantiate(Diamond, new Vector3(pos.x, pos.y + 1f, pos.z),Diamond.transform.rotation);
+        }
     }
 
     void SpawnZ()
@@ -56,6 +62,12 @@ public class PlatformSpawner : MonoBehaviour
         pos.z += size;
         lastPos = pos;
         Instantiate(Platform, pos, Quaternion.identity);
+        int rand = Random.Range(0, 6);
+
+        if (rand < 1)
+        {
+            Instantiate(Diamond, new Vector3(pos.x, pos.y + 1f, pos.z), Diamond.transform.rotation);
+        }
 
     }
 }

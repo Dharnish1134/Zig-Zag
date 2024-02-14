@@ -383,8 +383,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -409,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.23811293, y: -0.37477702, z: 0.10022396, w: -0.89039296}
-  m_LocalPosition: {x: -11.84, y: 13.95, z: -11.54}
+  m_LocalPosition: {x: -14.79, y: 20.27, z: -14.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,7 +485,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967422582}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 74558f72b32261547abf2ddf0148eee8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -622,6 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platform: {fileID: 4288111969540945683, guid: ec3b791db3e3c1644b598582063a09b6, type: 3}
+  Diamond: {fileID: 0}
 --- !u!1 &1041286228
 GameObject:
   m_ObjectHideFlags: 0
