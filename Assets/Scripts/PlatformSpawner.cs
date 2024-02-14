@@ -15,24 +15,30 @@ public class PlatformSpawner : MonoBehaviour
     {
         lastPos = transform.position;
         size = transform.localScale.x;
-        for (int i = 0; i < 5; i++) 
-        {
-            SpawnX();
-        }
-        for (int i = 0; i < 5; i++)
-        {
-            SpawnZ();
-        }
-        for (int i = 0; i < 5; i++)
-        {
-            SpawnX();
-        }
+        InvokeRepeating("SpawnPosition", 1f, 0.2f);
+       
     }
 
    
     void Update()
     {
-        
+        if (GameObject.Find("Main Camera").GetComponent<CameraFollow>().gameOver)
+        {
+            CancelInvoke("SpawnPosition");
+        }
+    }
+
+    void SpawnPosition()
+    {
+        int rand = Random.Range(0, 7);
+        if (rand < 4)
+        {
+            SpawnX();
+        }
+        else if (rand >= 3)
+        {
+            SpawnZ();
+        }
     }
 
     void SpawnX()

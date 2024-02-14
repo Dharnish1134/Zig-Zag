@@ -409,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.23811293, y: -0.37477702, z: 0.10022396, w: -0.89039296}
-  m_LocalPosition: {x: -16.01, y: 17.31, z: -15.62}
+  m_LocalPosition: {x: -11.84, y: 13.95, z: -11.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -476,7 +476,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &967422584
 SphereCollider:

@@ -8,14 +8,18 @@ public class PlatformTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Ball")
         {
-            Invoke("Fall",0.5f);
+            Invoke("Fall",0.3f);
         }
 
     }
+    private void Update()
+    {
 
+    }
     void Fall()
     {
         GetComponentInParent<Rigidbody>().useGravity = true;
+        GetComponentInParent<Rigidbody>().isKinematic = false;
         Destroy(transform.parent.gameObject,1f);
     }
 }
