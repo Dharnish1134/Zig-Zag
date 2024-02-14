@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
@@ -8,6 +9,7 @@ public class BallController : MonoBehaviour
     private float speed;
     Rigidbody rb;
     bool started,gameOver;
+    public GameObject Particle;
 
 
     private void Awake()
@@ -57,6 +59,17 @@ public class BallController : MonoBehaviour
         else if(rb.velocity.x>0)
         {
             rb.velocity = new Vector3(0, 0, speed);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Diamond")
+        {
+            GameObject Part =  Instantiate(Particle, other.gameObject.transform.position, Quaternion.identity);
+            Destroy(other.gameObject);
+            Destroy(Part,1f);
+             
         }
     }
 }
