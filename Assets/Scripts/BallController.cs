@@ -8,7 +8,7 @@ public class BallController : MonoBehaviour
     [SerializeField]
     private float speed;
     Rigidbody rb;
-    bool started,gameOver;
+    public bool started,gameOver;
     public GameObject Particle;
 
 
@@ -20,18 +20,19 @@ public class BallController : MonoBehaviour
     {
         started = false;
         gameOver = false;
-        
+        Application.targetFrameRate = 60;
     }
 
-    
+
     void Update()
     {
         if (!started)
         {
             if (Input.GetMouseButton(0))
             {
-                rb.velocity = new Vector3(speed, 0, 0);
                 started = true;
+                rb.velocity = new Vector3(speed, 0, 0);
+                GameManager.instance.StartGame();
             }
         }
         Debug.DrawRay(transform.position, Vector3.down, Color.red);
@@ -42,6 +43,7 @@ public class BallController : MonoBehaviour
             rb.constraints =  RigidbodyConstraints.None;
             rb.velocity = new Vector3(0, -25f, 0);
             GameObject.Find("Main Camera").GetComponent<CameraFollow>().gameOver = true;
+            GameManager.instance.GameOver();
         }
 
         if (Input.GetMouseButtonDown(0) && !gameOver)

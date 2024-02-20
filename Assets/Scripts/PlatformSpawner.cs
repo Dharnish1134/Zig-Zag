@@ -16,14 +16,15 @@ public class PlatformSpawner : MonoBehaviour
     {
         lastPos = transform.position;
         size = transform.localScale.x;
-        InvokeRepeating("SpawnPosition", 1f, 0.2f);
+        InvokeRepeating("SpawnPosition", 0.1f, 0.2f);
+        
        
     }
 
    
     void Update()
     {
-        if (GameObject.Find("Main Camera").GetComponent<CameraFollow>().gameOver)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().gameOver)
         {
             CancelInvoke("SpawnPosition");
         }
